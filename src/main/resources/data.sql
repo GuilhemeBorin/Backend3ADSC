@@ -9,11 +9,12 @@ VALUES
        ('Kotlin: Porque Java já era', 'Aprenda a linguagem que está tirando o sono dos desenvolvedores Java!', 1499.99, 'Programação Mobile'),
        ('Blockchain para quem não sabe nem o que é um bloco', 'Entenda o básico de blockchain e finja saber do que está falando em reuniões!', 2499.99, 'Tecnologia');
 
-INSERT INTO aluno
-       (id_curso, ra, nome)
-VALUES
-      (1, '01123456', 'Big Big'),
-      (1, '12345678', 'Luana Couto'),
-      (2, '13456789', 'Aghata Nunes'),
-      (2, '12987654', 'Ygonna Moura',
-      (4, '98765432', 'Saori Kido');
+--INSERT INTO aluno
+--       (curso_id, ra, nome)
+--VALUES
+--       (1, '1234567890', 'Ygonna Moura'),
+--       (1, '0987654321', 'Anna Bertioga'),
+--       (1, '1357924680', 'Jon Busao'),
+--       (1, '2468013579', 'Jaqueline Russa'),
+--       (1, '1122334455', 'Pedrinho Matador'),
+--       (1, '6677889900', 'Don Casmurro');

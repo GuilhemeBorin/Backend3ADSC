@@ -17,5 +17,8 @@ public class AlunoService {
         return repository.findAll();
     }
 
+    public List<Aluno> buscarPorNomeCurso(String nome){
+        return repository.findByCursoNomeContainingIgnoreCase(nome);
+    }
 
 }

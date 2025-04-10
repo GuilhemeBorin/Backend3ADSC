@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import school.sptech.exemplo_relacionamento.entity.Aluno;
 import school.sptech.exemplo_relacionamento.service.AlunoService;
@@ -28,4 +29,11 @@ public class AlunoController {
         return ResponseEntity.ok(alunos);
     }
 
+    @GetMapping("/cursos/nome")
+    public ResponseEntity <List<Aluno>> buscarPorCurso(
+    @RequestParam String valor
+    ){
+        service.buscarPorNomeCurso(valor);
+        return null;
+    }
 }

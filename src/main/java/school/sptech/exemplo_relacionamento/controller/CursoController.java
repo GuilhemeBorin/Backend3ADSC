@@ -76,5 +76,19 @@ public class CursoController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @GetMapping("/media-preco")
+    public ResponseEntity<Double> getMedia(){
+        return ResponseEntity.status(200).body(CursoService.buscarMedia());
+    }
 
+    @GetMapping("/preco/menor-que")
+    public ResponseEntity<List<Curso>> getValorMenor(@RequestParam Double valor){
+        return ResponseEntity.status(200).body(cursoService.buscarPorPrecoMenorQue(valor));
+    }
+
+    @DeleteMapping("/preco/menor-que")
+    public ResponseEntity<Void> deleteByValor(@RequestParam Double valor){
+        cursoService.deleteByValor(valor);
+       return ResponseEntity.status(200).build();
+    }
 }

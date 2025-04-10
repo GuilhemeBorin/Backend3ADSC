@@ -1,5 +1,7 @@
 package school.sptech.exemplo_relacionamento.service;
 
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import school.sptech.exemplo_relacionamento.entity.Curso;
 import school.sptech.exemplo_relacionamento.exception.EntidadeNaoEncontradaException;
@@ -11,7 +13,7 @@ import java.util.Optional;
 @Service
 public class CursoService {
 
-    private final CursoRepository cursoRepository;
+    private static CursoRepository cursoRepository;
 
     public List<Curso> listarTodosCursos() {
     return cursoRepository.findAll();
@@ -61,4 +63,17 @@ public class CursoService {
     public CursoService(CursoRepository cursoRepository) {
         this.cursoRepository = cursoRepository;
     }
+
+    public static Double buscarMedia(){
+        return cursoRepository.buscarMedia();
+    }
+
+    public List<Curso> buscarPorPrecoMenorQue(double valor){
+        return cursoRepository.buscarCursosComValorMenorQue(valor);
+    }
+
+    public void deleteByValor(double valor){
+        cursoRepository.deleteByValor(valor);
+    }
+
 }
